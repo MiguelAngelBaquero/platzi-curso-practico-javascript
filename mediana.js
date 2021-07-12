@@ -14,10 +14,13 @@ function esPar(numero) {
   }
 }
 
-function calcularMediana(lista) {
-  listaOrdenada = lista.sort(
+const ordenarLista = (lista) =>
+  lista.sort(
     (primerElemento, segundoElemento) => primerElemento - segundoElemento
   );
+
+function calcularMediana(listaDesordenada) {
+  const listaOrdenada = ordenarLista(listaDesordenada);
   const mitadLista = parseInt(listaOrdenada.length / 2);
   let mediana;
   if (esPar(listaOrdenada.length)) {
